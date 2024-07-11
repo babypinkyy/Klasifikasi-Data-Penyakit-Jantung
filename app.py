@@ -74,8 +74,9 @@ if st.button('Predict'):
     elif model_option == 'XGBoost Model Dengan Normalisasi':
         prediction = xgb_model_normalisasi.predict(input_data)
     
-    # Display the prediction result
+# Display the prediction result
     st.header('Prediction Result')
+    st.write(f'Prediction value: {prediction[0]}')
     if prediction[0] == 1:
         st.write('The model predicts that the patient has heart disease.')
     else:
