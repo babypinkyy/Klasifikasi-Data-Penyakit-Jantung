@@ -50,13 +50,13 @@ restecg = st.number_input('Resting Electrocardiographic Results (restecg)', min_
 thalach = st.number_input('Maximum Heart Rate Achieved (thalach)', min_value=0, max_value=250, value=150)
 exang = st.selectbox('Exercise Induced Angina (exang)', options=[0, 1], format_func=lambda x: 'No' if x == 0 else 'Yes')
 oldpeak = st.number_input('ST Depression Induced by Exercise (oldpeak)', min_value=0.0, max_value=10.0, value=1.0)
-slope = st.number_input('Slope of the Peak Exercise ST Segment (slope)', min_value=0, max_value=2, value=1)
-ca = st.number_input('Number of Major Vessels Colored by Fluoroscopy (ca)', min_value=0, max_value=4, value=0)
-thal = st.number_input('Thalassemia (thal)', min_value=0, max_value=3, value=2)
+# slope = st.number_input('Slope of the Peak Exercise ST Segment (slope)', min_value=0, max_value=2, value=1)
+# ca = st.number_input('Number of Major Vessels Colored by Fluoroscopy (ca)', min_value=0, max_value=4, value=0)
+# thal = st.number_input('Thalassemia (thal)', min_value=0, max_value=3, value=2)
 
 # Prepare the input data as a numpy array
 input_data = np.array([[
-    age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal
+    age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak
 ]])
 
 # Prediction button
