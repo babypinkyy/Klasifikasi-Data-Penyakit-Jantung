@@ -80,6 +80,7 @@ if st.button('Predict'):
         prediction = xgb_model_normalisasi.predict(input_data)
     
     # Display the prediction result
+    st.write(f'Prediction value: {prediction[0]}')
     st.header('Prediction Result')
     if prediction[0] == 1:
         st.write('Pasien Terindikasi Penyakit Jantung Ringan')
