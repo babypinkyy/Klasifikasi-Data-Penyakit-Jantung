@@ -82,12 +82,12 @@ if st.button('Predict'):
     # Display the prediction result
     st.header('Prediction Result')
     if prediction[0] == 1:
-        st.write('The model predicts 1')
+        st.write('Pasien Terindikasi Penyakit Jantung Ringan')
     elif prediction[0] == 2:
-        st.write('The model predicts 2')
+        st.write('Pasien Terindikasi Penyakit Jantung Sedang')
     elif prediction[0] == 3:
-        st.write('The model predicts 3')
+        st.write('asien Terindikasi Penyakit Jantung Parah')
     elif prediction[0] == 4:
-        st.write('The model predicts 4')
+        st.write('asien Terindikasi Penyakit Jantung Sangat Parah')
     else:
-        st.write('The model predicts 0')
+        st.write('Pasien Tidak Terindikasi Penyakit Jantung')
