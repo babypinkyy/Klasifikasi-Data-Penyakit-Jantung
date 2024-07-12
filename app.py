@@ -42,7 +42,12 @@ model_option = st.sidebar.selectbox(
 st.header('Input Patient Data')
 age = st.number_input('Age', min_value=0, max_value=120, value=30)
 sex = st.selectbox('Sex', options=[0, 1], format_func=lambda x: 'Female' if x == 0 else 'Male')
-cp = st.number_input('Chest Pain Type (CP)', min_value=0, max_value=3, value=1)
+cp = st.selectbox('Chest Pain Type (CP)', options=[1, 2, 3, 4], format_func=lambda x: {
+    1: 'Typical Angina', 
+    2: 'Atypical Angina', 
+    3: 'Non-anginal Pain', 
+    4: 'Asymptomatic'
+}[x])
 trestbps = st.number_input('Resting Blood Pressure (trestbps)', min_value=0, max_value=300, value=120)
 chol = st.number_input('Serum Cholestoral in mg/dl (chol)', min_value=0, max_value=600, value=200)
 fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl (fbs)', options=[0, 1], format_func=lambda x: 'False' if x == 0 else 'True')
@@ -74,10 +79,15 @@ if st.button('Predict'):
     elif model_option == 'XGBoost Model Dengan Normalisasi':
         prediction = xgb_model_normalisasi.predict(input_data)
     
-# Display the prediction result
+    # Display the prediction result
     st.header('Prediction Result')
-    st.write(f'Prediction value: {prediction[0]}')
     if prediction[0] == 1:
-        st.write('The model predicts that the patient has heart disease.')
+        st.write('The model predicts 1')
+    elif prediction[0] == 2:
+        st.write('The model predicts 2')
+    elif prediction[0] == 3:
+        st.write('The model predicts 3')
+    elif prediction[0] == 4:
+        st.write('The model predicts 4')
     else:
-        st.write('The model predicts that the patient does not have heart disease.')
+        st.write('The model predicts 0')
